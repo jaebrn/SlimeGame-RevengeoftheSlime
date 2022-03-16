@@ -9,21 +9,13 @@ public class BouncePads : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == "Player")
+        //Flat, tilemap bounce pads
+        if(gameObject.tag == "Bounce Pad" && collision.gameObject.tag == "Player")
         {
-            Bounce();
+            playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            Debug.Log("bounce pad");
         }
-    }
-
-    void Bounce()
-    {
-        if(gameObject.tag == "Bounce Pad") // applies to tilemap bounce pads 
-        {
-            playerRb.AddForce(Vector2.up * jumpForce);
-        }
-        else
-        {
-            return;
-        }
+        
+        
     }
 }
