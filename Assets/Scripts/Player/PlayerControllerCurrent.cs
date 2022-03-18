@@ -25,11 +25,15 @@ public class PlayerControllerCurrent : MonoBehaviour
     public float jumpTime;
     private bool isJumping;
 
+    //Spawns, Checkpoints, Level ends
+    private Vector2 respawnPoint;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        respawnPoint = this.transform.position;
 
     }
 
@@ -104,5 +108,21 @@ public class PlayerControllerCurrent : MonoBehaviour
         transform.localScale = Scaler;
 
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // kills
+        if (collision.gameObject.tag == "Hazard")
+        {
+            transform.position = respawnPoint;
+            Debug.Log("ouch");
+        }
+
+        //Checkpoint
+        else if (collision.gameObject.tag == "Checkpoint")
+        {
+            respawnPoint = new Vector2(transform.position.x, transform.position.y + 1);
+        }
+    }
+
 }
