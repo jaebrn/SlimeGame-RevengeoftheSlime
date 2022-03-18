@@ -17,7 +17,8 @@ public class BouncePads : MonoBehaviour
         }
         else
         {
-            playerRb.AddForce(this.transform.up * jumpForce, ForceMode2D.Impulse);
+            //playerRb.AddForce(new Vector2(1,0) * jumpForce, ForceMode2D.Impulse);
+            playerRb.velocity = new Vector2(0,1) * 25;
             Debug.Log("Angled BP");
         }
         
