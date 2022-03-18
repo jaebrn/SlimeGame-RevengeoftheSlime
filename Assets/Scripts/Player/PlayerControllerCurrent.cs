@@ -41,14 +41,15 @@ public class PlayerControllerCurrent : MonoBehaviour
     private void FixedUpdate()
     {
         moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
         OnTerrain = Physics2D.OverlapCircle(TerrainCheck.position, checkRadius, whatisTerrain);
-
 
     }
 
     void Update()
     {
+
+        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+
         if (OnTerrain == true && Input.GetKeyDown(KeyCode.Space))
         {
             isJumping = true;
