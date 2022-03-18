@@ -15,6 +15,11 @@ public class BouncePads : MonoBehaviour
             playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             Debug.Log("bounce pad");
         }
+        else
+        {
+            playerRb.AddForce(this.transform.up * jumpForce, ForceMode2D.Impulse);
+            Debug.Log("Angled BP");
+        }
         
         
     }

@@ -123,6 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &539505540
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5949758275562999803, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 985994989}
+    - target: {fileID: 6190328544369923509, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190328544369923509, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190328544369923509, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190328544369923509, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190328544369923509, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9556804
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190328544369923509, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190328544369923509, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190328544369923509, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.29440632
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190328544369923509, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190328544369923509, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190328544369923509, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 34.244
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547712401311608465, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
+      propertyPath: m_Name
+      value: Bouce Pad
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90dc556f383784c4ebff7f52f91875ed, type: 3}
 --- !u!1 &628387792
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ public class Animation : MonoBehaviour
             animator.SetBool("isIdle", false);
             animator.SetBool("isJumping", false);
 
-            Debug.Log("Falling");
+            //Debug.Log("Falling");
         }
         //Jumping
         else if(rb.velocity.y >= 0.1f)
@@ -36,7 +36,7 @@ public class Animation : MonoBehaviour
             animator.SetBool("isIdle", false);
             animator.SetBool("isJumping", true);
 
-            Debug.Log("Jumping");
+            //Debug.Log("Jumping");
         }
         //Idle
         else
@@ -45,7 +45,7 @@ public class Animation : MonoBehaviour
             animator.SetBool("isIdle", true);
             animator.SetBool("isJumping", false);
 
-            Debug.Log("Idle");
+            //Debug.Log("Idle");
         }
 
         //Dying not implemented
