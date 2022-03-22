@@ -177,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 14
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3335,7 +3335,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1145231152}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 12
+    OrthographicSize: 14
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -3503,6 +3503,9 @@ MonoBehaviour:
     m_Bits: 1024
   jumpForce: 14
   jumpTime: 0.3
+  isBouncing: 0
+  bounceTime: 0
+  bounceTimerMax: 0
 --- !u!50 &1145231150
 Rigidbody2D:
   serializedVersion: 4
@@ -4918,7 +4921,7 @@ MonoBehaviour:
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
   m_XDamping: 1
-  m_YDamping: 20
+  m_YDamping: 10
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
@@ -5004,6 +5007,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRb: {fileID: 1145231150}
   jumpForce: 150
+  bouncePadVector: {x: 0, y: 0}
+  bounceTimerMax: 0.5
 --- !u!19719996 &1976719701
 TilemapCollider2D:
   m_ObjectHideFlags: 0
