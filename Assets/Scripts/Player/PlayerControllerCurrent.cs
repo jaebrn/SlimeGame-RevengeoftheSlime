@@ -28,12 +28,20 @@ public class PlayerControllerCurrent : MonoBehaviour
     //Spawns, Checkpoints, Level ends
     private Vector2 respawnPoint;
 
+    //Bounce Pads
+    private Vector2 bouncePadVector; // force applied to player from bp
+    private float bouncePadJumpForce;
+    public bool isBouncing = false;
+    public float bounceTime;
+    public float bounceTimerMax;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = this.transform.position;
+        bouncePadVector = new Vector2(0, 0);
 
     }
 
@@ -57,6 +65,19 @@ public class PlayerControllerCurrent : MonoBehaviour
             rb.velocity = Vector2.up * jumpForce;
         }
 
+        if (Input.GetKey(KeyCode.Space) && isJumping == true)
+        {
+            if (jumpTimerMax > 0)
+            {
+                rb.velocity = Vector2.up * jumpForce;
+                jumpTimerMax -= Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+
+            }
+        }
 
         // likely a better version of the freeze would involve setting the rb type to kenematic
         //then back to dynamic on button release
@@ -76,19 +97,7 @@ public class PlayerControllerCurrent : MonoBehaviour
             rb.velocity = new Vector2 (rb.velocity.x, rb.velocity.y);
         }
 
-        if (Input.GetKey(KeyCode.Space) && isJumping == true)
-        {
-            if (jumpTimerMax > 0)
-            {
-                rb.velocity = Vector2.up * jumpForce;
-                jumpTimerMax -= Time.deltaTime;
-            }
-            else
-            {
-                isJumping = false;
-
-            }
-        }
+        
 
         if (facingRight == false && moveInput > 0)
         {
@@ -97,6 +106,22 @@ public class PlayerControllerCurrent : MonoBehaviour
         else if (facingRight == true && moveInput < 0)
         {
             Flip();
+        }
+
+        if (isBouncing == true)
+        {
+            if (bounceTime > 0)
+            {
+                bounceTime -= Time.deltaTime;
+                rb.velocity = bouncePadVector * bouncePadJumpForce;
+            }
+            else
+            {
+                bouncePadVector = new Vector2(0, 0);
+                bouncePadJumpForce = 0;
+                isBouncing = false;
+
+            }
         }
     }
     
@@ -123,6 +148,18 @@ public class PlayerControllerCurrent : MonoBehaviour
         else if (collision.gameObject.tag == "Checkpoint")
         {
             respawnPoint = new Vector2(transform.position.x, transform.position.y + 1);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Angled Bounce Pad")
+        {
+            isBouncing = true;
+            bounceTimerMax = collision.gameObject.GetComponent<BouncePads>().bounceTimerMax;
+            bounceTime = bounceTimerMax;
+            bouncePadVector = collision.gameObject.GetComponent<BouncePads>().bouncePadVector.normalized;
+            bouncePadJumpForce = collision.gameObject.GetComponent<BouncePads>().jumpForce;
         }
     }
 

@@ -21,7 +21,7 @@ public class Animation : MonoBehaviour
     void Update()
     {
         //Falling
-        if (rb.velocity.y <=  -0.1f)
+        if (rb.velocity.y <=  -0.5f)
         {
             animator.SetBool("isFalling", true);
             animator.SetBool("isIdle", false);
@@ -30,7 +30,7 @@ public class Animation : MonoBehaviour
             //Debug.Log("Falling");
         }
         //Jumping
-        else if(rb.velocity.y >= 0.1f)
+        else if(rb.velocity.y >= 0.5f)
         {
             animator.SetBool("isFalling", false);
             animator.SetBool("isIdle", false);

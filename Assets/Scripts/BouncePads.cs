@@ -5,8 +5,22 @@ using UnityEngine;
 public class BouncePads : MonoBehaviour
 {
     public Rigidbody2D playerRb;
-    public float jumpForce = 150;
+    public float jumpForce;
 
+    public Vector2 bouncePadVector;
+    public float bounceTimerMax = 0.5f;
+
+    private void Start()
+    {
+        if (gameObject.tag == "Bounce Pad")
+        {
+            jumpForce = 150;
+        }
+        else
+        {
+            jumpForce = 35;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Flat, tilemap bounce pads
@@ -17,9 +31,7 @@ public class BouncePads : MonoBehaviour
         }
         else
         {
-            //playerRb.AddForce(new Vector2(1,0) * jumpForce, ForceMode2D.Impulse);
-            playerRb.velocity = new Vector2(0,1) * 25;
-            Debug.Log("Angled BP");
+            bouncePadVector = transform.up;
         }
         
         

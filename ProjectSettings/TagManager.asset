@@ -7,6 +7,7 @@ TagManager:
   - Bounce Pad
   - Hazard
   - Checkpoint
+  - Angled Bounce Pad
   layers:
   - Default
   - TransparentFX
