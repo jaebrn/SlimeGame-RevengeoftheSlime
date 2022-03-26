@@ -27,6 +27,7 @@ public class PlayerControllerCurrent : MonoBehaviour
 
     //Spawns, Checkpoints, Level ends
     private Vector2 respawnPoint;
+    public Vector2 initialPosition;
 
     //Bounce Pads
     private Vector2 bouncePadVector; // force applied to player from bp
@@ -41,6 +42,7 @@ public class PlayerControllerCurrent : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = this.transform.position;
+        initialPosition = respawnPoint;
         bouncePadVector = new Vector2(0, 0);
 
     }
@@ -69,7 +71,7 @@ public class PlayerControllerCurrent : MonoBehaviour
         {
             if (jumpTimerMax > 0)
             {
-                rb.velocity = Vector2.up * jumpForce;
+                rb.velocity = new Vector2 (rb.velocity.x, Vector2.up.y * jumpForce);
                 jumpTimerMax -= Time.deltaTime;
             }
             else
