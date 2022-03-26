@@ -125,6 +125,16 @@ public class PlayerControllerCurrent : MonoBehaviour
 
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            gameObject.transform.position = respawnPoint;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            gameObject.transform.position = initialPosition;
+        }
     }
     
 
