@@ -25,8 +25,7 @@ public class UI : MonoBehaviour
         Application.Quit();
     }
 
-
-    public void Update()
+    public void OnMouseOver()
     {
         if(Input.GetMouseButtonDown(0) && player!= null)
         {
@@ -34,5 +33,4 @@ public class UI : MonoBehaviour
             print("reset");
         }
     }
-
 }

@@ -279,6 +279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 99511781}
+  player: {fileID: 0}
+  resetPos: {x: 0, y: 0}
 --- !u!114 &99511781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,6 +428,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 210546564}
+  player: {fileID: 0}
+  resetPos: {x: 0, y: 0}
 --- !u!114 &210546564
 MonoBehaviour:
   m_ObjectHideFlags: 0
