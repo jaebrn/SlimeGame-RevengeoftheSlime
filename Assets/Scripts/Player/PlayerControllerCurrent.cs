@@ -173,6 +173,19 @@ public class PlayerControllerCurrent : MonoBehaviour
             bouncePadVector = collision.gameObject.GetComponent<BouncePads>().bouncePadVector.normalized;
             bouncePadJumpForce = collision.gameObject.GetComponent<BouncePads>().jumpForce;
         }
+        else if (collision.gameObject.tag == "Moving Platform")
+        {
+            this.transform.parent = collision.transform;
+        }
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Moving Platform")
+        {
+            this.transform.parent = null;
+        }
+    }
+
 
 }

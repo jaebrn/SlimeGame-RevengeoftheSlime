@@ -8,6 +8,7 @@ TagManager:
   - Hazard
   - Checkpoint
   - Angled Bounce Pad
+  - Moving Platform
   layers:
   - Default
   - TransparentFX
