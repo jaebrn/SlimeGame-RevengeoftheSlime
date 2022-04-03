@@ -159,7 +159,7 @@ public class PlayerControllerCurrent : MonoBehaviour
         //Checkpoint
         else if (collision.gameObject.tag == "Checkpoint")
         {
-            respawnPoint = new Vector2(transform.position.x, transform.position.y + 1);
+            respawnPoint = new Vector2(collision.gameObject.transform.position.x, collision.gameObject.transform.position.y + 1) ;
         }
     }
 
