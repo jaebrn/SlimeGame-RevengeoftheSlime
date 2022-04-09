@@ -14,6 +14,8 @@ using LoggingPolicy = TelemetrySettings.LoggingPolicy;
 /// </summary>
 public partial class TelemetryLogger : MonoBehaviour
 {
+    //int death = 0;
+
     /// <summary>
     /// Settings used by this telemetry logger. You can get by with just one Settings asset used by
     /// every logger in your whole project, unless you need something more complicated.
@@ -43,6 +45,18 @@ public partial class TelemetryLogger : MonoBehaviour
     {
         _section = newSection;
         _service.RequestServiceFor(this);
+    }
+
+    /* I'm not sure of the proper syntax for logging here 
+     * I wrote in what I would do but kept it commented out so nothing gets broken
+     * the same thing is done in the Player Controller Current script starting at line 157
+     * new variables have also been added to that script at the top
+     */
+    public void LogDeath() 
+    {
+        //global var for death commented line 17 
+        //death += 1;
+        //_service.RequestServiceFor(this);
     }
 
     [Tooltip("When successfully connected to the telemetry server, this will be called with the session ID number. Use this if you want to display the session number on-screen.")]

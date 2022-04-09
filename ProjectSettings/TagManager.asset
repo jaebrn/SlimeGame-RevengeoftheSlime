@@ -9,6 +9,7 @@ TagManager:
   - Checkpoint
   - Angled Bounce Pad
   - Moving Platform
+  - Telemetry
   layers:
   - Default
   - TransparentFX

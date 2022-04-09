@@ -36,6 +36,8 @@ public class PlayerControllerCurrent : MonoBehaviour
     public float bounceTime;
     public float bounceTimerMax;
 
+    //Telemetry
+    GameObject telemetry;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,7 @@ public class PlayerControllerCurrent : MonoBehaviour
         initialPosition = respawnPoint;
         bouncePadVector = new Vector2(0, 0);
 
+        telemetry = GameObject.FindGameObjectWithTag("Telemetry");
     }
 
     // Update is called once per frame
@@ -154,6 +157,12 @@ public class PlayerControllerCurrent : MonoBehaviour
         {
             transform.position = respawnPoint;
             Debug.Log("ouch");
+
+            /* TELEMETRY LOGGING
+             * telemetry.GetComponent<TelemetryLogger>().LogDeath();
+             * ^ Invokes the Log Death method (Line 55 in TelemetryLogger script)
+             */
+
         }
 
         //Checkpoint
